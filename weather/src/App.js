@@ -4,6 +4,8 @@ import SearchBar from "./components/SearchBar";
 import CurrentWeather from "./components/CurrentWeather";
 import ForecastDay from "./components/ForecastDay";
 import HourlyForecast from "./components/HourlyForecast";
+import { formatDateFi } from "./utils/format";
+
 
 function App() {
     const [city, setCity] = useState("");
@@ -71,7 +73,7 @@ function App() {
 
                     {selectedDay && (
                         <>
-                            <h4>Tuntiennuste: {selectedDay}</h4>
+                            <h4>Tuntiennuste: {formatDateFi(selectedDay)}</h4>
                             <HourlyForecast hourly={weather.hourly} selectedDay={selectedDay} />
                         </>
                     )}
