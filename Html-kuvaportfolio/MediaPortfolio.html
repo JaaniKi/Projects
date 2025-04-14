@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <H1>Media Portfolio</H1>
+    </header>
+    <main>
+        <div class="ylätekstit">
+            <h4 class="esittely">Jaani Kivivasara</h4>
+            <label class="active-tab" onclick="setActiveTab(this); filterImages('all')">Kaikki kuvat</label>
+            <label onclick="setActiveTab(this); filterImages('maisema')">Maisemat</label>
+            <label onclick="setActiveTab(this); filterImages('puolustusvoimat')">Puolustusvoimat</label>
+            <label onclick="setActiveTab(this); filterImages('henkilökuvat')">Henkilökuvat</label>
+        </div>
+        
+        <div class="kuvagalleria">
+            <div class="kuvat" data-category="maisema">
+                <a target="_blank" href="kuvat/ranta-tampella.jpg">
+                <img src="kuvat/ranta-tampella.jpg" alt="ranta-tampella">
+                </a>
+            </div>
+            <div class="kuvat" data-category="puolustusvoimat">
+                <a target="_blank" href="kuvat/tankki.jpg">
+                <img src="kuvat/tankki.jpg" alt="tankki">
+                </a>
+            </div>
+            <div class="kuvat" data-category="maisema">
+                <a target="_blank" href="kuvat/levy.jpg">
+                <img src="kuvat/levy.jpg" alt="levy">
+                </a>
+            </div>
+            <div class="kuvat" data-category="maisema">
+                <a target="_blank" href="kuvat/nasijarvi.jpg">
+                <img src="kuvat/nasijarvi.jpg" alt="nasijarvi">
+                </a>
+            </div>
+            <div class="kuvat" data-category="puolustusvoimat">
+                <a target="_blank" href="kuvat/helikopter2.jpg">
+                <img src="kuvat/helikopter2.jpg" alt="helikopter2">
+                </a>
+            </div>
+             <div class="kuvat" data-category="maisema">
+                <a target="_blank" href="kuvat/juhlapoyta.jpg">
+                <img src="kuvat/juhlapoyta.jpg" alt="juhlapoyta">
+                </a>
+            </div>
+            <div class="kuvat" data-category="maisema">
+                <a target="_blank" href="kuvat/ikkuna.jpg">
+                <img src="kuvat/ikkuna.jpg" alt="ikkuna">
+                </a>
+            </div>
+            <div class="kuvat" data-category="henkilökuvat">
+                <a target="_blank" href="kuvat/auringonvalo.jpg">
+                <img src="kuvat/auringonvalo.jpg" alt="auringonvalo">
+                </a>
+            </div>
+            <div class="kuvat" data-category="puolustusvoimat">
+                <a target="_blank" href="kuvat/tankki_ja_mopo.jpg">
+                <img src="kuvat/tankki_ja_mopo.jpg" alt="tankki_ja_mopo">
+                </a>
+            </div>
+            <div class="kuvat" data-category="henkilökuvat">
+                <a target="_blank" href="kuvat/päivystäjä.jpg">
+                <img src="kuvat/päivystäjä.jpg" alt="päivystäjä">
+                </a>
+            </div>
+            <div class="kuvat" data-category="maisema">
+                <a target="_blank" href="kuvat/talot.jpg">
+                <img src="kuvat/talot.jpg" alt="talot">
+                </a>
+            </div>
+            <div class="kuvat" data-category="puolustusvoimat">
+                <a target="_blank" href="kuvat/varustarkastus.jpg">
+                <img src="kuvat/varustarkastus.jpg" alt="varustarkastus">
+                </a>
+            </div>
+            <div class="kuvat" data-category="puolustusvoimat">
+                <a target="_blank" href="kuvat/helikopter.jpg">
+                <img src="kuvat/helikopter.jpg" alt="helikopter">
+                </a>
+            </div>
+            <div class="kuvat" data-category="puolustusvoimat">
+                <a target="_blank" href="kuvat/tanks.jpg">
+                <img src="kuvat/tanks.jpg" alt="tanks">
+                </a>
+            </div>
+            <div class="kuvat" data-category="puolustusvoimat">
+                <a target="_blank" href="kuvat/sisäammunnat.jpg">
+                <img src="kuvat/sisäammunnat.jpg" alt="sisäammunnat">
+                </a>
+            </div>
+            <div class="kuvat" data-category="puolustusvoimat">
+                <a target="_blank" href="kuvat/vala.jpg">
+                <img src="kuvat/vala.jpg" alt="vala">
+                </a>
+            </div>
+            <div class="kuvat" data-category="puolustusvoimat">
+                <a target="_blank" href="kuvat/ohimarssi.jpg">
+                <img src="kuvat/ohimarssi.jpg" alt="ohimarssi">
+                </a>
+            </div>
+            <div class="kuvat" data-category="maisema">
+                <a target="_blank" href="kuvat/ice.jpg">
+                <img src="kuvat/ice.jpg" alt="ice">
+                </a>
+            </div>
+            <div class="kuvat" data-category="maisema">
+                <a target="_blank" href="kuvat/levyheijastus.jpg">
+                <img src="kuvat/levyheijastus.jpg" alt="levyheijastus">
+                </a>
+            </div>
+            <div class="kuvat" data-category="henkilökuvat">
+                <a target="_blank" href="kuvat/selfie.jpg">
+                <img src="kuvat/selfie.jpg" alt="selfie">
+                </a>
+            </div>
+            <div class="kuvat" data-category="puolustusvoimat">
+                <a target="_blank" href="kuvat/tankki_muta.jpg">
+                <img src="kuvat/tankki_muta.jpg" alt="tankki_muta">
+                </a>
+            </div>
+            <div class="kuvat" data-category="maisema">
+                <a target="_blank" href="kuvat/sylvi.JPG">
+                <img src="kuvat/sylvi.JPG" alt="sylvi">
+                </a>
+            </div>
+            <div class="kuvat" data-category="puolustusvoimat">
+                <a target="_blank" href="kuvat/vartio.jpg">
+                <img src="kuvat/vartio.jpg" alt="vartio">
+                </a>
+            </div>
+
+        </div>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

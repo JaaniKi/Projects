@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #e0f7fa;
+  color: #333;
+}
+
+.container {
+  max-width: 750px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.search {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 60%;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #005f87;
+}
+
+.weather-box {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: #f0fdfc;
+  border-radius: 12px;
+}
+
+.forecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.forecast-day {
+  background: #b2ebf2;
+  padding: 0.7rem;
+  border-radius: 10px;
+  width: 130px;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.forecast-day:hover {
+  background: #80deea;
+}
+
+.forecast-day.selected {
+  border: 2px solid #0077b6;
+  background: #4dd0e1;
+}
+
+.forecast-date {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.hourly {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.hour {
+  background: #e0f2f1;
+  padding: 0.5rem;
+  width: 90px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
