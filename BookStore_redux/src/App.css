@@ -1,0 +1,156 @@
+/* Yleinen pohja */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e8f0f8, #f5f7fa);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  min-height: 100vh;
+}
+
+.app-container {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Otsikko */
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+/* Lomake */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  transition: 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4c9aff;
+  box-shadow: 0 0 0 3px rgba(76, 154, 255, 0.2);
+}
+
+button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
+
+/* Taulukko */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f4f6f8;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+td button {
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+td button:hover {
+  opacity: 0.9;
+}
+
+td button:first-child {
+  background-color: #3498db;
+  color: white;
+}
+
+td button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Varastovärit */
+.low-stock {
+  background-color: #fff3cd;
+}
+
+.out-of-stock {
+  background-color: #f8d7da;
+}
+
+/* Tyhjä lista */
+p {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+/* Responsiivisuus */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 1.5rem;
+  }
+
+  table, th, td {
+    font-size: 0.9rem;
+  }
+
+  td button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  input {
+    font-size: 0.95rem;
+  }
+}
