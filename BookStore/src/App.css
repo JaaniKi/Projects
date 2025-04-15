@@ -1,0 +1,190 @@
+/* Reset ja fontti */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #e0eafc);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 3rem;
+}
+
+/* Sovelluksen kontti */
+.app-container {
+  width: 90%;
+  max-width: 900px;
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Otsikko */
+.app-container h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* Lomake */
+form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #444;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input {
+  margin-top: 0.3rem;
+  padding: 0.75rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccd6dd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+
+input:focus {
+  border-color: #4c9aff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 154, 255, 0.2);
+}
+
+/* Haku */
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccd6dd;
+  margin-bottom: 2rem;
+  transition: 0.2s;
+}
+
+.search-input:focus {
+  border-color: #4c9aff;
+  box-shadow: 0 0 0 3px rgba(76, 154, 255, 0.2);
+  outline: none;
+}
+
+/* Painikkeet */
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button[type="submit"] {
+  background-color: #2ecc71;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #27ae60;
+}
+
+td button {
+  margin-right: 0.5rem;
+}
+
+td button:first-child {
+  background-color: #3498db;
+  color: white;
+}
+
+td button:nth-child(2) {
+  background-color: #f1c40f;
+  color: white;
+}
+
+td button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+td button:hover {
+  filter: brightness(0.95);
+}
+
+/* Taulukko */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  background: white;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eef2f7;
+}
+
+th {
+  background-color: #f9fafc;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #34495e;
+}
+
+/* Värivihjeet */
+.low-stock {
+  background-color: #fff9e6;
+}
+
+.out-of-stock {
+  background-color: #ffe6e6;
+}
+
+/* Tekstikappaleet */
+p {
+  font-size: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+  color: #555;
+}
+
+/* Responsiivisuus */
+@media (max-width: 600px) {
+  .app-container {
+    padding: 1.5rem;
+  }
+
+  th, td {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
+  button {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
