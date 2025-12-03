@@ -1,0 +1,910 @@
+/* ====== YLEINEN SIVUTYYLI ====== */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #faf3dd; /* vaalea kellertävä/beige */
+  font-family: "Georgia", serif;
+}
+
+/* Keskityskontti – EI flexiä bodyn päällä */
+.App {
+  width: 100%;
+  max-width: 700px;              /* pysyvä max leveys koko pelille */
+  margin: 40px auto;             /* keskitys vaakasuunnassa */
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Otsikko */
+.App-header h1 {
+  margin-top: 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+/* ====== SALASANA INPUT ====== */
+
+.App-header input[type="text"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1.3rem;
+  font-family: "Courier New", monospace;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+.App-header input[type="text"]:focus {
+  outline: none;
+  border-color: #999;
+}
+
+/* ====== LAATIKOT ====== */
+
+.rules-container {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Ulkokuori – leveys aina sama kuin .App:n sisältöalue */
+.rule-box {
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  overflow: hidden; /* header + content yhtenä korttina */
+  width: 100%;      /* 🔒 aina koko rivin leveys .App:ssa */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+/* Reunaväri tilan mukaan + taustaväri koko kortille */
+.rule-box.rule-ok {
+  border-color: #8ad48a;
+  background: #e8ffe8;
+}
+
+.rule-box.rule-fail {
+  border-color: #f5b5b5;
+  background: #ffecec;
+}
+
+/* ====== RULE HEADER (✔ Rule X) ====== */
+
+.rule-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 10px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-bottom: 2px solid rgba(0,0,0,0.07); /* ohut harmaa linja */
+}
+
+/* värit headerille */
+.rule-box.rule-ok .rule-header {
+  background: #a5f5a5; /* tummempi vihreä */
+  color: #145523;
+}
+
+.rule-box.rule-fail .rule-header {
+  background: #ffb3b3; /* tummempi punainen */
+  color: #7f1717;
+}
+
+.rule-header .rule-number {
+  font-weight: 600;
+}
+
+.rule-header .rule-icon {
+  font-size: 1.2rem;
+}
+
+/* ====== RULE SISÄLTÖ ====== */
+
+.rule-content {
+  padding: 20px 24px 26px;  /* reilu sisätila */
+  font-size: 1.05rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Teksti sisällä */
+.rule-content p {
+  margin: 0;
+}
+
+/* Kun sääntö täyttyy juuri -> pieni pulahdus */
+.rule-just-ok {
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.97);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ====== STATUS (jos käytät vielä) ====== */
+
+.status {
+  margin-top: 18px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.status-ok {
+  background: #14532d;
+  border: 1px solid #4ade80;
+}
+
+.status-fail {
+  background: #451a1a;
+  border: 1px solid #f97373;
+}
+
+/* ====== ERIKOISSISÄLLÖT LAATIKOISSA (kuvat jne.) ====== */
+
+.rule-box img {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+/* Koirakuva */
+.dog-image {
+  margin-top: 8px;
+  width: 50%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ====== MUSIC ====== */
+
+.music-box {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.music-play-btn,
+.note-btn {
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.music-play-btn:hover,
+.note-btn:hover {
+  filter: brightness(0.95);
+}
+
+.note-buttons {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.note-correct {
+  background: #c7ffb8;
+  border-color: #35b535;
+}
+
+.music-hint {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* ====== MAZE ====== */
+
+.maze-box {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.maze-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 24px);
+  grid-template-rows: repeat(5, 24px);
+  gap: 3px;
+  justify-content: flex-start;
+}
+
+.maze-cell {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.maze-wall {
+  background-color: #333;
+  border-color: #333;
+}
+
+.maze-player {
+  background-color: #d0f0ff;
+  border-color: #3399ff;
+}
+
+.maze-goal {
+  background-color: #ffe9a8;
+  border-color: #f0b000;
+}
+
+.maze-hint {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.maze-secret {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.maze-secret span {
+  font-family: monospace;
+}
+
+/* ====== MOVING OBJECTS (kurkkumopo) ====== */
+
+.moving-box {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.moving-area {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background-size: cover;
+  background-position: center;
+}
+
+.moving-item {
+  position: absolute;
+  left: -40px;
+  width: 32px;
+  height: 32px;
+  animation: plane-fly 4s linear forwards;
+}
+
+@keyframes plane-fly {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(260px);
+  }
+}
+
+.moving-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.moving-hint {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.moving-replay-btn {
+  align-self: flex-start;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.moving-replay-btn:hover {
+  filter: brightness(0.95);
+}
+
+/* ====== MAP (Salonsaari / muut) ====== */
+
+.map-box {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.map-frame {
+  width: 100%;
+  max-width: 400px;
+  height: 220px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.map-hint {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* ====== FLAG PUZZLE ====== */
+
+.flag-box {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.flag-image {
+  width: 100%;
+  max-width: 260px;
+  height: 160px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  object-fit: cover;
+  background: none;
+  display: block;
+}
+
+.flag-hint {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* ====== Keskitys interaktiivisille bokseille ====== */
+
+.flag-box,
+.map-box,
+.moving-box,
+.maze-box,
+.music-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* keskittää sisällön vaakasuunnassa */
+  gap: 0.4rem;
+}
+
+.flag-image,
+.map-frame,
+.moving-area,
+.maze-grid {
+  margin-top: 8px;
+}
+
+/* ====== FROZEN WORD – siisti sulamis-animaatio ====== */
+
+.frozen-box {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* itse jääkortti */
+.frozen-inner {
+  position: relative;
+  width: 260px;
+  height: 140px;
+  border-radius: 16px;
+  overflow: hidden;  /* 🔥 kaikki pysyy pyöreiden kulmien sisällä */
+  background: radial-gradient(circle at top left, #ffffff 0, #d7f4ff 40%, #6aa6d8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* sana – täysin piilossa kunnes sulaminen valmis */
+.frozen-word {
+  position: relative;
+  z-index: 2;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00324f;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+/* kun JS asettaa is-melted → sana näkyy */
+.frozen-inner.is-melted .frozen-word {
+  opacity: 1;
+}
+
+/* pääjääkerros */
+.frozen-ice {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit; /* 🔥 noudattaa pyöreitä kulmia */
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255,255,255,0.9) 0, transparent 55%),
+    radial-gradient(circle at 85% 10%, rgba(255,255,255,0.8) 0, transparent 60%),
+    linear-gradient(135deg, #d6ecff 0%, #a3cffe 40%, #7fb6f0 100%);
+  mix-blend-mode: screen;
+  filter: blur(2px) saturate(1.15);
+  opacity: 1;
+}
+
+/* hienovarainen “shine”-overlay jään päällä */
+.frozen-inner::before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.7) 45%,
+    rgba(255, 255, 255, 0) 90%
+  );
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* kun hiustenkuivaaja päällä → jää sulaa pehmeästi + shine liikkuu */
+.frozen-inner.is-melting .frozen-ice {
+  animation: ice-melt 10s ease-out forwards;
+}
+
+.frozen-inner.is-melting::before {
+  animation: ice-shine 2.2s ease-in-out infinite;
+}
+
+/* sulaminen: blur vähenee & jää haalistuu, ei mitään rumia reunoja */
+@keyframes ice-melt {
+  0% {
+    opacity: 1;
+    filter: blur(4px) saturate(1.1);
+    transform: scale(1.02);
+  }
+  40% {
+    opacity: 0.85;
+    filter: blur(3px) saturate(1.05);
+  }
+  70% {
+    opacity: 0.45;
+    filter: blur(2px) saturate(1.0);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(0px) saturate(1.0);
+    transform: scale(1);
+  }
+}
+
+/* shine-efekti: valo pyyhkäisee jään läpi, rajat klipattu border-radiusilla */
+@keyframes ice-shine {
+  0% {
+    transform: translateX(-40%) translateY(-10%) rotate(12deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(0%) translateY(0%) rotate(12deg);
+    opacity: 0.85;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(40%) translateY(10%) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+/* hiustenkuivaaja-nappi pysyy entisenä */
+.hairdryer-btn {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.hairdryer-btn:hover:not(:disabled) {
+  filter: brightness(0.95);
+}
+
+.hairdryer-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ====== SNAKE GAME RULE ====== */
+
+.snake-box {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.snake-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 16px);
+  grid-template-rows: repeat(10, 16px);
+  gap: 2px;
+  padding: 6px;
+  border-radius: 10px;
+  background: #020617;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.8);
+}
+
+.snake-cell {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: #0b1220;
+}
+
+.snake-cell.snake-body {
+  background: #4ade80;
+}
+
+.snake-cell.snake-head {
+  background: #22c55e;
+}
+
+.snake-cell.snake-apple {
+  background: #f97373;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* sana & eteneminen */
+.snake-word-progress {
+  font-size: 0.85rem;
+}
+
+.snake-letter {
+  display: inline-block;
+  margin: 0 2px;
+  padding: 1px 4px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.snake-letter-done {
+  background: #bbf7d0;
+  border-color: #22c55e;
+}
+
+.snake-hint {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.snake-hint-error {
+  color: #b91c1c;
+}
+
+.snake-complete {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.snake-complete span {
+  font-family: monospace;
+}
+
+.snake-start-btn {
+  margin-top: 0.25rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #cbd5f5;
+  background: #e2e8ff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.snake-start-btn:hover {
+  filter: brightness(0.97);
+}
+
+.snake-restart-btn {
+  margin-top: 0.25rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #fecaca;
+  background: #fee2e2;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.snake-restart-btn:hover {
+  filter: brightness(0.97);
+}
+
+.password-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1.3rem;
+  font-family: "Courier New", monospace;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+
+  resize: none;          /* käyttäjä ei voi vetää kulmasta */
+  overflow: hidden;      /* EI SCROLLIA */
+  line-height: 1.4;      /* nätimpi riviväli */
+
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: #999;
+}
+
+.game-complete {
+  margin-top: 24px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #fff7c2;
+  border: 2px solid #eab308;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: gameGlow 0.6s ease-out;
+}
+
+.game-complete h2 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.game-complete p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+@keyframes gameGlow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* ===== WIN BOX / END GAME ===== */
+
+.win-box {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: #e0ffe7;
+  border: 2px solid #4ade80;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  text-align: center;
+  align-items: center;
+}
+
+.win-box h2 {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+}
+
+.win-box p {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
+.win-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.win-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.win-btn:hover {
+  filter: brightness(0.95);
+}
+
+.win-yes {
+  background: #4ade80;
+  border-color: #16a34a;
+  color: #05301a;
+}
+
+.win-no {
+  background: #fee2e2;
+  border-color: #f97373;
+  color: #7f1717;
+}
+
+/* Final password – näkyy, mutta ei ole helposti kopioitavissa */
+.final-password-view {
+  margin: 8px 0 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #fff8dc;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  user-select: none;       /* 🔒 ei voi maalata tekstiä */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Re-type kenttä ja virheet */
+
+/* Re-type kenttä: perii password-input-tyylit, lisäsäätö tarvittaessa */
+.retype-input {
+  margin-top: 4px;
+  font-size: 1.1rem;     /* halutessa vähän pienempi, sama fontti */
+}
+
+.retype-input:focus {
+  outline: none;
+  border-color: #4ade80;
+}
+
+.retype-confirm-btn {
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #16a34a;
+  background: #4ade80;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.retype-confirm-btn:hover {
+  filter: brightness(0.95);
+}
+
+.retype-error {
+  margin-top: 6px;
+  color: #b91c1c;
+  font-size: 0.85rem;
+}
+
+.password-input.password-locked {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;   /* ei klikkausta, ei fokusointia */
+  opacity: 0.9;           /* halutessasi pieni visuaalinen vihje lukituksesta */
+}
+
+.retype-textarea {
+  text-align: center;       /* halutessa myös tekstin keskitys */
+  width: 100%;
+  max-width: 90%;
+}
+.retype-confirm-btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ====== ASCII SUM RULE ====== */
+
+.ascii-box {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ascii-letters {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.ascii-letter {
+  min-width: 28px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid #cbd5f5;
+  background: #e2e8ff;
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.ascii-hint {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  text-align: center;
+}
+
+/* ====== POKÉMON TYPE RULE ====== */
+
+.pokemon-box {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.pokemon-box p {
+  margin: 0;
+}
+
+.pokemon-hint {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.pokemon-image {
+  width: 96px;
+  height: 96px;
+  image-rendering: pixelated;
+}
+
+.zodiac-emoji {
+  font-size: 3rem;
+}
+.zodiac-hint {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.rule-subtext {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
