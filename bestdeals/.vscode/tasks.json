@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build with MSVC",
+            "type": "shell",
+            "command": "cl",
+            "args": [
+                "/EHsc",
+                "/Iapi",
+                "src\\main.cpp",
+                "api\\cheapshark.cpp",
+                "api\\levenshtein.cpp",
+                "api\\rawgapi.cpp"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

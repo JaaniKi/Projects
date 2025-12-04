@@ -1,0 +1,86 @@
+MainWindow {
+	background-color: #C6B3B3;
+}
+
+MainWindow QPushButton {
+    background-color: #E4D1D1;
+    color: black;
+    border: 1px solid #261C15;
+    border-radius: 5px;
+    padding: 4px 10px;
+    font-size: 13px;
+}
+
+QListWidget {
+	border: 2px ridge #261C15;
+	border-radius: 5px;
+	background-color: #A06666;
+	margin: 6px;	
+}
+
+QGroupBox {
+	font-family: "bookman";
+	font-size: 24px;
+	color: #1A2A40;
+}
+
+QLineEdit {
+	border: 3px solid #261C15;
+	border-radius: 4px;
+}
+
+QLineEdit:hover {
+	border: 4px solid #A81C62;
+}
+
+QLineEdit:focus {
+	border: 3px solid #A81C62;
+}
+
+#titleLabel {
+	font-size: 19px;
+	color: #261C15;
+	text-decoration: underline;
+}
+
+#releasedLabel {
+	font-size: 14px;
+}
+
+#textlabel {
+	font-size: 14px;
+}
+
+#gameRatingLabel {
+	font-size: 14px;
+}
+
+#gameInfoBox {
+    background-color: #B3748D;
+    border: 2px solid #261C15;
+    border-radius: 6px;
+    padding: 8px;
+    color: #261C15;
+    font-size: 14px;
+}
+
+QListWidget::item {
+	border: 2px solid #261C15;
+	border-radius: 8px;
+	background-color: #B3748D;
+}
+
+QListWidget::item:selected {
+	border: 4px solid #A81C62;
+	border-radius: 8px;
+}
+
+#gameDealButton,
+#openButton {
+    background-color: #E4D1D1;
+    color: #261C15;
+    border: 1px solid #261C15;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 11px;
+}
