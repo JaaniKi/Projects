@@ -3,6 +3,7 @@
 Bestdeals is a Qt-based desktop application for finding video game deals. It combines game
 metadata from the RAWG API with price data from CheapShark, allowing users to search for games,
 view detailed information, and compare current deals across multiple stores.
+This was a group project of four people including me.
 
 ## Features
 - Search games by title
