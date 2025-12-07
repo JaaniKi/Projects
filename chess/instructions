@@ -1,0 +1,19 @@
+Ohjeet pelin käyttöön ja säännöt
+
+Yleiskuvaus:
+Ohjelma on yksinkertaistettu graafinen shakki, jossa voittaja määräytyy syöttämällä vastustajan kuningas. Pelissä ei ole shakkimattia tai tasapelejä.
+
+Käyttöliittymä:
+- Avaa 8×8-ruudukko, jossa näkyvät shakkinappulat.
+- Infotekstinä näytetään vuorossa oleva pelaaja tai pelin lopputulos (esim. "White’s turn", "Black won!").
+- Näytöllä on kaksi painiketta:
+  - "Restart": Aloittaa uuden pelin ja asettaa vuoron valkoiselle.
+  - "Quit": Sulkee ohjelman.
+
+Pelin kulku:
+1. Klikaa oman värisi nappulaa.
+2. Laudalla korostuvat sallitut siirrot.
+3. Klikaa korostettua ruutua siirtääksesi nappulan.
+4. Vuoro vaihtuu automaattisesti.
+6. Voittaja on se, joka ensimmäisenä syö vastustajan kuninkaan.
+

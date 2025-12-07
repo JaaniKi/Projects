@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pieces/bl-bishop-on-bl.png</file>
+        <file>pieces/bl-bishop-on-wt.png</file>
+        <file>pieces/bl-king-on-bl.png</file>
+        <file>pieces/bl-king-on-wt.png</file>
+        <file>pieces/bl-knight-on-bl.png</file>
+        <file>pieces/bl-knight-on-wt.png</file>
+        <file>pieces/bl-pawn-on-bl.png</file>
+        <file>pieces/bl-pawn-on-wt.png</file>
+        <file>pieces/bl-queen-on-bl.png</file>
+        <file>pieces/bl-queen-on-wt.png</file>
+        <file>pieces/bl-rook-on-bl.png</file>
+        <file>pieces/bl-rook-on-wt.png</file>
+        <file>pieces/wt-bishop-on-bl.png</file>
+        <file>pieces/wt-bishop-on-wt.png</file>
+        <file>pieces/wt-king-on-bl.png</file>
+        <file>pieces/wt-king-on-wt.png</file>
+        <file>pieces/wt-knight-on-bl.png</file>
+        <file>pieces/wt-knight-on-wt.png</file>
+        <file>pieces/wt-pawn-on-bl.png</file>
+        <file>pieces/wt-pawn-on-wt.png</file>
+        <file>pieces/wt-queen-on-bl.png</file>
+        <file>pieces/wt-queen-on-wt.png</file>
+        <file>pieces/wt-rook-on-bl.png</file>
+        <file>pieces/wt-rook-on-wt.png</file>
+        <file>pieces/empty-bl.png</file>
+        <file>pieces/empty-wt.png</file>
+    </qresource>
+</RCC>

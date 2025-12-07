@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Asiakaspalvelubotti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- 💬 Kelluva botti-ikkuna -->
+  <div class="chat-widget">
+    <div class="chat-header">
+      Asiakaspalvelu
+    </div>
+
+    <div id="faq-buttons" class="faq-buttons">
+      <button class="faq-btn">📦 Missä tilaukseni on?</button>
+      <button class="faq-btn">🔁 Miten palautan tuotteen?</button>
+      <button class="faq-btn">📦 Onko tuote X varastossa?</button>
+    </div>    
+
+    <div id="chat"></div>
+    <form id="chat-form">
+      <input type="text" id="input" placeholder="Kysy tuotteista tai tilauksista..." autocomplete="off" />
+      <button type="submit">Lähetä</button>
+    </form>
+  </div>
+
+  <button class="chat-toggle" id="chat-toggle">
+    💬 Apubotti
+  </button>
+  
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+debug/bishop.o
+debug/chess.o
+debug/chessboard.o
+debug/chesspiece.o
+debug/knight.o
+debug/main.o
+debug/mainwindow.o
+debug/pawn.o
+debug/king.o
+debug/queen.o
+debug/rook.o
+debug/qrc_chess_icons.o
+debug/moc_mainwindow.o

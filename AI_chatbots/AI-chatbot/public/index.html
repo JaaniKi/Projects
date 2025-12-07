@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Keskustelubotti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🤖 Keskustelubotti</h1>
+    <div id="chat"></div>
+    <form id="chat-form" autocomplete="off">
+      <input type="text" id="input" placeholder="Kirjoita viesti..." />
+      <button type="submit">Lähetä</button>
+      <button onclick="clearHistory()" class="clear-button">🗑️ Tyhjennä keskustelu</button>
+
+    </form>
+  </div>
+
+  <!-- Linkitä ulkoinen JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
