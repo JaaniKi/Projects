@@ -23,9 +23,18 @@ function App() {
   const [isPasswordLocked, setIsPasswordLocked] = useState(false);
 
 
-  // finnish swear words list
-  const FinnishSwearWords = ["perkele", "saatana", "vittu", "paska", "jumalauta", "helvetti"];
-
+  // finnish Cities words list
+  const FinnishCities = [
+    "Helsinki", "Espoo", "Vantaa", "Turku", "Tampere", "Oulu", "Lahti",
+    "Kuopio", "Jyväskylä", "Pori", "Lappeenranta", "Vaasa", "Seinäjoki",
+    "Rovaniemi", "Mikkeli", "Kotka", "Hämeenlinna", "Porvoo", "Joensuu",
+    "Kajaani", "Kokkola", "Rauma", "Salo", "Iisalmi", "Varkaus",
+    "Raisio", "Imatra", "Kemi", "Savonlinna", "Heinola",
+    "Nokia", "Ylöjärvi", "Kangasala", "Riihimäki",
+    "Raasepori", "Valkeakoski", "Forssa", "Äänekoski", "Loimaa",
+    "Akaa", "Raahe", "Tornio", "Pieksämäki", "Orimattila",
+    "Parkano", "Keuruu", "Uusikaupunki"
+  ];
   // Poista rivinvaihdot (ja emoji-variation selectorin varmuudeksi)
   const normalizePassword = (s) =>
     s.replace(/\r?\n/g, "").replace(/\uFE0F/g, "");
@@ -412,10 +421,13 @@ function App() {
         }, 0) === digitTarget,
     },
     {
-      id: "swear-word",
+      id: "city-name",
       number: 6,
-      message: "Password must include a Finnish swear word.",
-      test: (pwd) => FinnishSwearWords.some((word) => pwd.toLowerCase().includes(word)),
+      message: "Password must include a Finnish city name.",
+      test: (pwd) =>
+        FinnishCities.some((word) =>
+          pwd.toLowerCase().includes(word.toLowerCase())
+        ),
     },
     {
       id: "Niilo22-birthday-days",
