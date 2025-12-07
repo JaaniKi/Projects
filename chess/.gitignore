@@ -2,8 +2,9 @@
 *.pro.user.*
 *.qbs.user
 *.qbs.user.*
-build-*/
 cmake-build-*/
+build/
+build-*/
 *.o
 *.obj
 *.a
