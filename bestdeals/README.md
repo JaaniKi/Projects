@@ -29,9 +29,11 @@ widgets for presenting games and deals.
 
 ## Instructions:
 
-Easiest way to run project:
+### Easiest way to run project:
 - run bestdeals.exe in /run directory
 
+
+---
 
 
 Setting up env:
