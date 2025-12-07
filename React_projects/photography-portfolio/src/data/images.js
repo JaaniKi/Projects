@@ -18,7 +18,6 @@ const imagesData = [
     { src: '/kuvat/ohimarssi.jpg', alt: 'ohimarssi', category: 'puolustusvoimat' },
     { src: '/kuvat/ice.jpg', alt: 'ice', category: 'maisemat' },
     { src: '/kuvat/levyheijastus.jpg', alt: 'levyheijastus', category: 'muut' },
-    { src: '/kuvat/selfie.jpg', alt: 'selfie', category: 'henkilökuvat' },
     { src: '/kuvat/tankki_muta.jpg', alt: 'tankki_muta', category: 'puolustusvoimat' },
     { src: '/kuvat/sylvi.JPG', alt: 'sylvi', category: 'muut' },
     { src: '/kuvat/vartio.jpg', alt: 'vartio', category: 'puolustusvoimat' },
